@@ -1,0 +1,94 @@
+*{
+  background:black;
+  color:white;
+  text-align:center;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#root{
+  height:100vh;
+}
+
+.menuRow{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+}
+
+.menuRow *{
+  margin:auto;
+}
+
+
+.menuRow * {
+    /* height: 100px; */
+    padding: 5px;
+    background: rgb(253, 253, 254);
+    color:black;
+    font-size: larger;
+    font-weight: bolder;
+    margin: 5px auto;
+    min-width: 200px;
+    border-radius:10px;
+}
+
+.menuRow *:hover{
+  background-color: rgb(172, 127, 43);
+  color:rgb(255, 255, 255);
+}
+
+.menuRow * a{
+  background-color: unset;
+  color:unset
+}
+
+@media only screen and (max-width: 600px) {
+.menuRow{
+  flex-direction: column;
+  display:flex;
+}
+
+.menuRow *{
+  width:80%;
+  
+  
+}
+  
+}

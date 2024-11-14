@@ -1,0 +1,25 @@
+
+
+.table{
+    height:100%;
+}
+
+
+.table.dreams{
+
+    background-color: black;
+
+}
+
+.table.journal{
+
+    background-color: rgb(17, 136, 157);
+
+}
+
+#journalCanvas{
+    position:absolute;
+    z-index:0;
+    height:100%;
+    width:100%;
+}

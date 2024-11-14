@@ -1,0 +1,162 @@
+.Calendar {}
+
+.calendar {
+
+    width:80%;
+    height:100%;
+    margin:auto;
+
+}
+.calenderDays{
+    width:100%;
+       grid-template-columns: repeat(7, 1fr);
+       height:50px;
+       display:table;
+
+}
+.calendarSelected{
+    background-color: #3ddce1;
+}
+.calendarSelected:hover{
+    background-color: #543bf5;
+    
+}
+.calendarDay{
+    /* display:grid; */
+
+    display:flex;
+    border: 1px solid black;
+    height:100%;
+    width:12%;
+    margin:1%;
+
+    /* width:14.152%; */
+    float:left;
+    height:50px;
+    border-radius:10px;
+    background-color: white;
+    color:black;
+
+
+}
+
+.calendarDates{
+       grid-template-columns: repeat(7, 1fr);
+    width:100%;
+    display:table;
+    border:1px solid black;
+    background-color: white;
+    color:black;
+}
+
+@media screen and (max-width: 689px) {
+
+    .calenderDays{
+        display: none;
+    }
+
+    
+}
+
+.calendarDate{
+    display:grid;
+    border: 1px solid black;
+    height:100%;
+    width:12%;
+    margin:1%;
+    border-radius:10px;
+    float:left;
+        height:150px;
+    display: flex;
+    animation:calendarGrow both .2s linear
+
+}
+
+.calendarDate *, .calendarDay *{
+    background-color: unset;
+    margin:auto;
+}
+
+.calendarDay *{
+    color:black;
+    font-weight: bold ! important;
+    text-transform:uppercase;
+}
+
+.spreadListItem{
+    width:100%;
+    margin-bottom:5px;
+    display:table;
+}
+
+.calendarHeader{
+    display:flex;
+    width:100%;
+}
+.calendarHeader *{
+    margin:auto;
+}
+@media screen and (max-width: 689px) {
+
+    .calendarDays{
+        display: none;
+    }
+
+    
+}
+
+@keyframes calendarGrow {
+
+    0%{transform:scale(50%)}
+    99%{
+transform:scale(105%)
+    }
+    100%{transform:scale(100%)}
+}
+
+@keyframes calendarDrop{
+    0%{transform:translateY(-200%)}
+    95%{
+transform:translateY(0%)
+    }
+    100%{transform:translateY(5%)}
+}
+
+.calendarSelected{
+    animation: calendarDrop .2s linear;
+    overflow-y: scroll;
+}
+
+.calendarSelected::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.calendarSelected {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.yearTravel{
+    display:flex;
+    flex-direction: row;
+}
+.yearTravel *{
+    margin-left:5px;
+}
+
+.spreadList{
+    width: 100%;
+    padding: 5px;
+    display: block;
+    flex-direction: row;
+    text-align: center;
+    max-width: 120px;
+}
+
+.spreadListItem{
+    margin:5px;
+    display:block;
+    float:left;
+    width:25%;
+}

@@ -1,0 +1,305 @@
+
+
+.table{
+    height:100%;
+}
+
+
+.table.dreams{
+
+    /* background-color: black; */
+      position:absolute;
+    width:100%;
+    transition-duration: .5s;
+    
+
+background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%)
+}
+
+.table.journal{
+    
+    position:absolute;
+    width:100%;
+    transition-duration: .5s;
+   background: linear-gradient(0deg, rgba(201,204,187,1) 0%, rgba(72,213,213,1) 69%, rgba(0,0,0,0) 100%);
+
+
+
+}
+.table.journal *, .table.dreams *{
+    background-color: unset;
+}
+
+@keyframes sky {
+
+    0%{background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%); 
+;
+/* background: linear-gradient(0deg, rgb(120, 121, 111) 0%, rgb(32, 94, 94) 75%, rgba(0,0,0,0) 100%); */
+}
+50%{
+    background:rgb(30, 87, 87)
+}
+    100%{
+        /* background: rgb(201,204,187); */
+background: linear-gradient(0deg, rgba(201,204,187,1) 0%, rgba(72,213,213,1) 69%, rgba(0,0,0,0) 100%);
+}
+    /* 100%{    background: rgb(87,89,70);
+background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%);
+} */
+    
+}
+
+@keyframes sky2 {
+
+
+0%{
+background: linear-gradient(0deg, rgba(201,204,187,1) 0%, rgba(72,213,213,1) 69%, rgba(0,0,0,0) 100%);
+
+}
+    50%{    background: rgb(75, 75, 75);
+/* background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%); */
+}
+100%{
+  /* background: rgb(87,89,70); */
+background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%); 
+
+}
+
+}
+
+    
+
+
+.journal.topRow{
+    position:relative;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index:1;
+    width:100%;
+    display:flex;
+
+}
+.dreams.topRow{
+    position:relative;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index:1;
+    width:100%;
+    display:flex;
+}
+
+.dreams.topRow *{
+    margin:auto;
+
+}
+
+.journal.topRow *{
+    margin:auto;
+    
+}
+
+#journalCanvas{
+    position:absolute;
+    z-index:0;
+    height:100%;
+    width:100%;
+}
+.listOfEntries{
+    position:relative;
+    width:80%;
+    margin:auto;
+    padding:5px;
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:white;
+    color:black;
+
+}
+
+.listOfEntries *{
+    width:80%;
+    margin:auto;
+    padding:5px;
+    text-align:left;
+    background-color:white;
+    color:black ! important;
+
+}
+
+.formsDiv{
+    width:100%;
+    
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    position:relative;
+}
+
+.formsDiv *{
+    width:80%;
+    margin:auto;
+    background-color: white ! important;
+    color:black;
+    padding:5px;
+    border-radius:10px;
+    
+}
+
+.formsDiv div, .formsDiv form{
+    border-radius:0px;
+}
+.formsDiv textarea{
+
+    min-height:200px;
+    
+}
+
+.formsDiv input[type="text"]{
+    min-height:50px;
+}
+
+.formsDiv button{
+    margin-top:5px;
+
+}
+.formsDiv button:hover{
+    background-color:black;
+        /* border: 1px solid WHITE; */
+    color:white
+}
+
+#symbolLable{
+    margin-top:20px;
+}
+
+.SunContainer{
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:5%;
+    left:5%
+}
+
+.RayContainer1{
+    position:absolute;
+    height:100%;
+    width:100%;
+    transform-origin: center;
+    animation:rotationSlow 15s linear infinite;
+    /* animation-play-state:paused; */
+}
+.sunFace{
+    height:100%;
+    width:100%;
+    position:absolute;
+    z-index:2;
+
+}
+.rayIndividualContainer{
+    height:100px;
+    width:100px;
+    /* top:50%;
+    left:50%; */
+    position:absolute;
+    transform-origin: center;
+    animation: rotationSlow 3.5s linear infinite;
+}
+.Ray1{
+    transform:rotate(0deg);
+    position: absolute;
+    height: 35%;
+    width: 350%;
+    top: 40%;
+    left: -120%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition:all;
+    transition-duration: .5s;
+
+
+}
+.Ray2{
+
+    height:30px;
+    width: 30px;
+    border-radius:15px;
+    position: absolute;
+    /* background-color: rgb(199, 188, 26) ! important; */
+    border:3px solid rgb(0, 0, 0);
+    animation: grow .5s linear both;
+
+
+}
+.starContainer{
+    position:absolute;
+    height:20%;
+    width:100%;
+    top:-10%;
+    pointer-events: none;
+    z-index:2;
+}
+.star{
+    position:absolute;
+    height:50px;
+    width:50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation:twinkle 1s infinite;
+    pointer-events: all ! important;
+}
+
+@keyframes twinkle {
+
+    0%{transform:scale(95%);
+    opacity:.8;}
+    50%{transform:scale(100%);
+    opacity:1}
+    100%{transform:scale(95%);
+    opacity:.8}
+
+    
+}
+@keyframes rotationSlow {
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+    
+}
+
+@keyframes drop{
+    0%{
+        top:-100%;
+    }
+    100%{
+        top:0%;
+    }
+}
+@keyframes grow {
+    0%{
+        height:1px;
+        width:1px;
+    }
+    100%{
+        height:30px;
+        width:30px;
+    }
+    
+}
+.sunRay1Animated{
+
+}
+
+.sunRay2{
+
+}
+
+.star{
+
+}
+
+.starAnimated{
+
+}

@@ -1,0 +1,26 @@
+.sidebar{
+border:1px solid black;
+display:flex;
+flex-direction: column;
+text-align: center;
+height:80%;
+}
+
+.userinput{
+    width:80%;
+    margin-top:1%
+}
+.homePage{
+    height:100%;
+}
+.gameComponent{
+    animation:gameComponent .3s both;
+    height:100%;
+}
+
+@keyframes gameComponent {
+
+    0%{transform:translate(-100%)}
+    100%{transform:translate(0%)}
+    
+}
