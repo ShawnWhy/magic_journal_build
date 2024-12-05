@@ -204,6 +204,10 @@ background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%);
     transform-origin: center;
     animation: rotationSlow 3.5s linear infinite;
 }
+.moonInner{
+    animation: rotationSlow 15s linear reverse infinite;
+}
+
 .Ray1{
     transform:rotate(0deg);
     position: absolute;
@@ -215,8 +219,47 @@ background: linear-gradient(0deg, rgba(87,89,70,1) 1%, rgba(0,0,0,1) 100%);
     background-size: cover;
     transition:all;
     transition-duration: .5s;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: contain;
 
 
+}
+.moonRay{
+  height: 35% ;
+  width: 180%;
+  top: 40%;
+  left: -40%;
+  transform-origin: center;
+}
+.moonRay:nth-child(odd){
+    animation:shrink 1s linear infinite;
+}
+.moonRay:nth-child(even){
+    animation:shrink 1s linear infinite;
+    animation-delay:.5s;
+
+}
+@keyframes shrink {
+    0%{
+            height: 35% ;
+  width: 180%;
+    top: 40%;
+  left: -40%;
+    }
+    50%{
+            height: 35% ;
+  width: 150%;
+    top: 40%;
+  left: -25%;
+    }
+    100%{
+            height: 35% ;
+  width: 180%;
+    top: 40%;
+  left: -40%;
+    }
+    
 }
 .Ray2{
 

@@ -9,7 +9,9 @@ import sunFace from "../../public/images/sun/sunface.svg"
 import sunRay1 from "../../public/images/sun/ray1.svg"
 import sunRay2 from "../../public/images/sun/ray2.svg"
 import star from "../../public/images/star/star.svg"
-
+import moonFace from '../../public/images/moon/face.svg'
+import moonRay1 from '../../public/images/moon/rays.svg'
+import moonInner from '../../public/images/moon/inner.svg'
 
 const Journal = () => {
 const [countDown, setCountDown] =useState(0) 
@@ -59,6 +61,18 @@ const [countDown, setCountDown] =useState(0)
       });
     }
   }
+
+    const rotateMoonRaysInitial = function () {
+      var SunRays1 = document.getElementsByClassName("Ray1");
+      if (SunRays1.length > 0) {
+        Array.from(SunRays1).forEach((ray, index) => {
+          setTimeout(() => {
+            ray.style.transform = "rotate(" + index * 15 + "deg)";
+          }, index * 100);
+        });
+      }
+    };
+
 
   const getJournalorDreams = function () {
     var formattedDate = new Date().toISOString().slice(0, 10);
@@ -261,7 +275,54 @@ const [countDown, setCountDown] =useState(0)
   const journalModes = ["dreams", "journal"];
 
   const [journalMode, setJournalMode] = useState("dreams");
+// let moonRayInterval;
+let moonRayTurn = "even"
+const shrinkMoonRays = function(){  
+  var MoonRays1 = document.getElementsByClassName("Ray1");
+  if (MoonRays1.length > 0) {
+    if(moonRayTurn==="even"){
+      Array.from(MoonRays1).forEach((ray, index) => {
+        // setTimeout(() => {
+          if(index%2===0){
+          let rayRotation = ray.style.transform.split("scale")[0];
+          ray.style.transform = rayRotation +  "scale(0.75)";
+          }
+          else{
+            let rayRotation = ray.style.transform.split("scale")[0];
+            ray.style.transform = rayRotation +  "scale(1)";
+          }
+        // }, index * 100);
+        moonRayTurn = "odd"
+      }) 
+    }
+    else if (moonRayTurn === "odd") {
+      Array.from(MoonRays1).forEach((ray, index) => {
+        // setTimeout(() => {
+        if (index % 2 > 0) {
+          let rayRotation = ray.style.transform.split("scale")[0];
+          ray.style.transform = rayRotation + "scale(0.75)";
+        } else {
+          let rayRotation = ray.style.transform.split("scale")[0];
+          ray.style.transform = rayRotation + "scale(1)";
+        }
+        // }, index * 100);
+      });
+      moonRayTurn = "even";
+    }
+}
+}
 
+
+// if(journalMode==="dreams"){
+//     setInterval(() => {
+//       console.log("shrinkMoonRays");
+//       shrinkMoonRays();
+//     }, 550);
+//   }
+  
+  // else{
+  //   clearInterval(moonRayInterval);
+  // }
 
 
   useEffect(() => {
@@ -270,6 +331,10 @@ const [countDown, setCountDown] =useState(0)
 
           if (journalMode === "journal") {
             rotateRaysInitial();
+          }
+          if (journalMode === "dreams") {
+            rotateMoonRaysInitial();
+        
           }
   }, [journalMode]);
 
@@ -328,13 +393,16 @@ const [countDown, setCountDown] =useState(0)
       <div className={"col-12 " + journalMode + " topRow"}>
         <div className="modeSelectJournal">
           {journalModes.map((mode) => (
-            <button onClick={() =>{ 
-              if(mode!==journalMode){
-                setDreamSymbols([])
-                
-              }
-              setJournalMode(mode)
-            }}>{mode}</button>
+            <button
+              onClick={() => {
+                if (mode !== journalMode) {
+                  setDreamSymbols([]);
+                }
+                setJournalMode(mode);
+              }}
+            >
+              {mode}
+            </button>
           ))}
         </div>
       </div>
@@ -567,7 +635,97 @@ const [countDown, setCountDown] =useState(0)
           </div>
         </div>
       )}
-
+      {journalMode === "dreams" && (
+        <div className="SunContainer">
+          <div
+            className="sunFace moonInner"
+            style={{
+              backgroundImage: `url(${moonInner})`,
+            }}
+          ></div>
+          <div
+            className="sunFace"
+            style={{
+              backgroundImage: `url(${moonFace})`,
+            }}
+          ></div>
+          <div className="RayContainer1">
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            <div
+              className="Ray1 moonRay"
+              style={{
+                backgroundImage: `url(${moonRay1})`,
+              }}
+            ></div>
+            
+          </div>
+        </div>
+      )}
       {journalMode === "dreams" && (
         <div className="starContainer">
           {todaysSymbols.map((symbol, index) => {
@@ -575,7 +733,7 @@ const [countDown, setCountDown] =useState(0)
             var random1 = Math.floor(Math.random() * 80) + 5;
             var random2 = Math.floor(Math.random() * 80) + 5;
             var random3 = Math.floor(Math.random() * 80) + 20;
-            var random4 = Math.floor(Math.random()*60)-30
+            var random4 = Math.floor(Math.random() * 60) - 30;
             //  var randomInt = Math.floor(Math.random() * 2) + 2;
             //  var randomInt2 = Math.floor(Math.random() * 2) + 1;
             //  var randomColor1 = Math.floor(Math.random() * 255);
@@ -588,11 +746,11 @@ const [countDown, setCountDown] =useState(0)
                   backgroundImage: `url(${star})`,
                   left: random2 + "%",
                   top: random1 + "%",
-                  transform: "scale(" + random3 + "%) rotation("+ random4+ "deg)",
+                  transform:
+                    "scale(" + random3 + "%) rotation(" + random4 + "deg)",
                 }}
                 href={`/symbolsJournal/${symbol}/${journalMode}`}
-              >
-              </a>
+              ></a>
             );
           })}
         </div>
